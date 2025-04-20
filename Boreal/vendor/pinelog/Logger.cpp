@@ -1,6 +1,5 @@
+#include "bopch.h"
 #include "Logger.h"
-
-#include <windows.h>
 
 namespace Pinelog {
 

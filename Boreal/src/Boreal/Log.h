@@ -1,8 +1,6 @@
 #pragma once
 
-#include "../vendor/pinelog/Logger.h"
-
-#include <memory>
+#include "../../vendor/pinelog/Logger.h"
 
 namespace Boreal {
 
@@ -31,7 +29,7 @@ namespace Boreal {
 #define BO_ENGINE_ERROR(...)	::Boreal::Log::GetEngineLogger()->error(__VA_ARGS__)
 
 // Client logging macros
-#define BO_CLIENT_TRACE(...)	::Boreal::Log::GetClientLogger()->debug(__VA_ARGS__)
-#define BO_CLIENT_INFO(...)		::Boreal::Log::GetClientLogger()->info(__VA_ARGS__)
-#define BO_CLIENT_WARN(...)		::Boreal::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define BO_CLIENT_ERROR(...)	::Boreal::Log::GetClientLogger()->error(__VA_ARGS__)
+#define BO_TRACE(...)	::Boreal::Log::GetClientLogger()->debug(__VA_ARGS__)
+#define BO_INFO(...)		::Boreal::Log::GetClientLogger()->info(__VA_ARGS__)
+#define BO_WARN(...)		::Boreal::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define BO_ERROR(...)	::Boreal::Log::GetClientLogger()->error(__VA_ARGS__)

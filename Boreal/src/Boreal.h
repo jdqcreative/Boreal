@@ -6,7 +6,7 @@
 #include "Boreal/Log.h"
 
 // TEMP
-//#include "vendor/pinelog/Logger.h"
+//#include "../pinelog/Logger.h"
 
 //---Entry Point------------------
 #include "Boreal/EntryPoint.h"

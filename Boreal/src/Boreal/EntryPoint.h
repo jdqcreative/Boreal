@@ -2,7 +2,7 @@
 
 extern Boreal::Application* CreateApplication();
 
-int main() {
+int main(int argc, char** argv) {
 
 	// calls user-defined application's CreateApplication function
 	auto app = CreateApplication();
@@ -13,14 +13,13 @@ int main() {
 		return -1;
 	}
 
-	// TEST CODE
+	// TEST CODE =======================
 	Boreal::Log::Init();
 	int count = 5;
 	BO_ENGINE_WARN("Count is currently: {}", count);
-	BO_CLIENT_INFO("Hello Boreal Engine!");
+	BO_INFO("Hello Boreal Engine!");
+	//===================================
 
-	//Pinelog::Logger logger;
-	//logger.info("Hello");
 
 	// Main loop
 	app->Run();

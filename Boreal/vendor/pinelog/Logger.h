@@ -1,15 +1,5 @@
 #pragma once
 
-#include <iostream>
-#include <fstream>
-#include <mutex>
-#include <string>
-#include <ctime>
-#include <sstream>
-#include <iomanip>
-#include <stdio.h>
-#include <format>
-
 namespace Pinelog {
 
 	enum class LogLevel { DEBUG, INFO, WARN, ERR };
@@ -29,10 +19,10 @@ namespace Pinelog {
 		template <typename... Args>
 		void logf(LogLevel level, const std::string& format, Args... args);
 
-		//void debug(const std::string& message) { log(LogLevel::DEBUG, message); }
-		//void info(const std::string& message) { log(LogLevel::INFO, message); }
-		//void warn(const std::string& message) { log(LogLevel::WARN, message); }
-		//void error(const std::string& message) { log(LogLevel::ERR, message); }
+		void debug(const std::string& message) { log(LogLevel::DEBUG, message); }
+		void info(const std::string& message) { log(LogLevel::INFO, message); }
+		void warn(const std::string& message) { log(LogLevel::WARN, message); }
+		void error(const std::string& message) { log(LogLevel::ERR, message); }
 
 		// Template functions for formatting logs with values
 		template<typename... Args>

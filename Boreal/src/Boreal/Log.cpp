@@ -1,3 +1,4 @@
+#include "bopch.h"
 #include "Log.h"
 
 namespace Boreal {
