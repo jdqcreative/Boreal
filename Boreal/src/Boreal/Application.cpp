@@ -19,20 +19,29 @@ namespace Boreal {
 
 	void Application::Run()
 	{
-		// TEMP ====================
-		WindowResizeEvent e(1200, 720);
-		Event& base = e;
 
-		EventDispatcher dispatcher(base);
-		dispatcher.Dispatch<WindowResizeEvent>([](WindowResizeEvent& e) {
-			std::cout << "Window Width: " << e.GetWidth() << std::endl;
-			return true;
-			});
+		while (m_Running) 
+		{
+			// TEMP ====================
+			for (Layer* layer : m_LayerStack)
+			{
+				layer->OnUpdate();
+			}
+			//==========================
+		}
+	}
 
-		BO_INFO(e.ToString());
-		//==========================
+	void Application::OnEvent(Event& e)
+	{}
 
-		while (true) {}
+	void Application::PushLayer(Layer* layer)
+	{
+		m_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverlay(Layer* overlay)
+	{
+		m_LayerStack.PushOverlay(overlay);
 	}
 
 	void Application::Shutdown()

@@ -4,6 +4,8 @@
 
 #include "Boreal/Application.h"
 #include "Boreal/Log.h"
+#include "Boreal/Layer.h"
+#include "Boreal/LayerStack.h"
 
 // TEMP
 //#include "../pinelog/Logger.h"

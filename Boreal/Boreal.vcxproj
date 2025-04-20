@@ -143,6 +143,7 @@
     <ClInclude Include="src\Boreal\Events\KeyboardEvent.h" />
     <ClInclude Include="src\Boreal\Events\MouseEvent.h" />
     <ClInclude Include="src\Boreal\Layer.h" />
+    <ClInclude Include="src\Boreal\LayerStack.h" />
     <ClInclude Include="src\Boreal\Log.h" />
     <ClInclude Include="src\bopch.h" />
     <ClInclude Include="vendor\pinelog\Logger.h" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClCompile Include="src\Boreal\Application.cpp" />
     <ClCompile Include="src\Boreal\Layer.cpp" />
+    <ClCompile Include="src\Boreal\LayerStack.cpp" />
     <ClCompile Include="src\Boreal\Log.cpp" />
     <ClCompile Include="src\bopch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
