@@ -1,0 +1,3 @@
+[submodule "Boreal/vendor/GLFW"]
+	path = Boreal/vendor/GLFW
+	url = https://github.com/jdqcreative/glfw

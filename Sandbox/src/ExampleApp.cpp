@@ -6,9 +6,9 @@ public:
 	ExampleLayer()
 		: Layer("Example") {}
 
-	void OnUpdate() override
+	void OnUpdate(Boreal::Timestep ts) override
 	{
-		BO_INFO("ExampleLayer::Update");
+		BO_INFO("Delta Time: {}", ts.GetMilliseconds());
 	}
 
 	void OnEvent(Boreal::Event& event) override

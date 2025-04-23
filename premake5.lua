@@ -9,6 +9,12 @@ workspace "Boreal"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder
+IncludeDir = {}
+IncludeDir["GLFW"] = "Boreal/vendor/GLFW/include"
+
+include "Boreal/vendor/GLFW"
+
 project "Boreal"
 	location "Boreal"
 	kind "StaticLib"
@@ -33,7 +39,14 @@ project "Boreal"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/pinelog"
+		"%{prj.name}/vendor/pinelog",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

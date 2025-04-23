@@ -10,8 +10,32 @@
     <Filter Include="src\Boreal\Events">
       <UniqueIdentifier>{F5FF0C2A-6116-0BC0-AA8D-96E116E3DB47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Boreal\Utility">
+      <UniqueIdentifier>{7494ED36-6078-AE8C-C9D8-A8DFB5DB980E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW">
+      <UniqueIdentifier>{D27667C1-3E2C-E0B6-C720-DA8D33D5D6BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\deps">
+      <UniqueIdentifier>{2D9CE7E7-1995-063A-42C7-EBBE2E1FE645}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\deps\glad">
+      <UniqueIdentifier>{54138E41-C07F-493C-8973-E199F59E6BA4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\deps\mingw">
+      <UniqueIdentifier>{DEA3BB73-CA9D-E4C5-B30A-7BD69FA34A32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\include">
+      <UniqueIdentifier>{45501F1D-B1B1-FC2A-3A1F-43DDA67F33EA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\include\GLFW">
+      <UniqueIdentifier>{A4FE9F69-9023-EFE9-B96E-D479A5F2ED07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\GLFW\src">
+      <UniqueIdentifier>{E94D2683-55D9-9347-5EEA-163CCAF4EF47}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor\pinelog">
       <UniqueIdentifier>{508EC577-3C5C-B97D-25F0-29A4115D95E2}</UniqueIdentifier>
@@ -42,22 +66,149 @@
     <ClInclude Include="src\Boreal\Events\MouseEvent.h">
       <Filter>src\Boreal\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Boreal\Input.h">
+      <Filter>src\Boreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Layer.h">
+      <Filter>src\Boreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\LayerStack.h">
+      <Filter>src\Boreal</Filter>
+    </ClInclude>
     <ClInclude Include="src\Boreal\Log.h">
+      <Filter>src\Boreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Timestep.h">
+      <Filter>src\Boreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Utility\Time.h">
+      <Filter>src\Boreal\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Window.h">
       <Filter>src\Boreal</Filter>
     </ClInclude>
     <ClInclude Include="src\bopch.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\getopt.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\glad\gl.h">
+      <Filter>vendor\GLFW\deps\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\glad\gles2.h">
+      <Filter>vendor\GLFW\deps\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\glad\vulkan.h">
+      <Filter>vendor\GLFW\deps\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\linmath.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\mingw\_mingw_dxhelper.h">
+      <Filter>vendor\GLFW\deps\mingw</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\mingw\dinput.h">
+      <Filter>vendor\GLFW\deps\mingw</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\mingw\xinput.h">
+      <Filter>vendor\GLFW\deps\mingw</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\nuklear.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\nuklear_glfw_gl2.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\stb_image_write.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\deps\tinycthread.h">
+      <Filter>vendor\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h">
+      <Filter>vendor\GLFW\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h">
+      <Filter>vendor\GLFW\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\cocoa_joystick.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\cocoa_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\cocoa_time.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\internal.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\linux_joystick.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\mappings.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\null_joystick.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\null_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\posix_poll.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\posix_thread.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\posix_time.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\win32_joystick.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\win32_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\win32_thread.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\win32_time.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\wl_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\x11_platform.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\GLFW\src\xkb_unicode.h">
+      <Filter>vendor\GLFW\src</Filter>
+    </ClInclude>
     <ClInclude Include="vendor\pinelog\Logger.h">
       <Filter>vendor\pinelog</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Boreal\Application.cpp">
       <Filter>src\Boreal</Filter>
     </ClCompile>
+    <ClCompile Include="src\Boreal\Layer.cpp">
+      <Filter>src\Boreal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Boreal\LayerStack.cpp">
+      <Filter>src\Boreal</Filter>
+    </ClCompile>
     <ClCompile Include="src\Boreal\Log.cpp">
       <Filter>src\Boreal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Boreal\Utility\Time.cpp">
+      <Filter>src\Boreal\Utility</Filter>
     </ClCompile>
     <ClCompile Include="src\bopch.cpp">
       <Filter>src</Filter>
@@ -65,5 +216,6 @@
     <ClCompile Include="vendor\pinelog\Logger.cpp">
       <Filter>vendor\pinelog</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

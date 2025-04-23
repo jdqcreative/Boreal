@@ -77,7 +77,7 @@
       <PrecompiledHeaderFile>bopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>BO_PLATFORM_WINDOWS;BO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\pinelog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\pinelog;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -88,6 +88,9 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -95,7 +98,7 @@
       <PrecompiledHeaderFile>bopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>BO_PLATFORM_WINDOWS;BO_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\pinelog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\pinelog;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -110,6 +113,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
@@ -117,7 +123,7 @@
       <PrecompiledHeaderFile>bopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>BO_PLATFORM_WINDOWS;BO_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\pinelog;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\pinelog;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -132,6 +138,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Boreal.h" />
@@ -142,10 +151,48 @@
     <ClInclude Include="src\Boreal\Events\Event.h" />
     <ClInclude Include="src\Boreal\Events\KeyboardEvent.h" />
     <ClInclude Include="src\Boreal\Events\MouseEvent.h" />
+    <ClInclude Include="src\Boreal\Input.h" />
     <ClInclude Include="src\Boreal\Layer.h" />
     <ClInclude Include="src\Boreal\LayerStack.h" />
     <ClInclude Include="src\Boreal\Log.h" />
+    <ClInclude Include="src\Boreal\Timestep.h" />
+    <ClInclude Include="src\Boreal\Utility\Time.h" />
+    <ClInclude Include="src\Boreal\Window.h" />
     <ClInclude Include="src\bopch.h" />
+    <ClInclude Include="src\Platform\WindowsWindow.h" />
+    <ClInclude Include="vendor\GLFW\deps\getopt.h" />
+    <ClInclude Include="vendor\GLFW\deps\glad\gl.h" />
+    <ClInclude Include="vendor\GLFW\deps\glad\gles2.h" />
+    <ClInclude Include="vendor\GLFW\deps\glad\vulkan.h" />
+    <ClInclude Include="vendor\GLFW\deps\linmath.h" />
+    <ClInclude Include="vendor\GLFW\deps\mingw\_mingw_dxhelper.h" />
+    <ClInclude Include="vendor\GLFW\deps\mingw\dinput.h" />
+    <ClInclude Include="vendor\GLFW\deps\mingw\xinput.h" />
+    <ClInclude Include="vendor\GLFW\deps\nuklear.h" />
+    <ClInclude Include="vendor\GLFW\deps\nuklear_glfw_gl2.h" />
+    <ClInclude Include="vendor\GLFW\deps\stb_image_write.h" />
+    <ClInclude Include="vendor\GLFW\deps\tinycthread.h" />
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3.h" />
+    <ClInclude Include="vendor\GLFW\include\GLFW\glfw3native.h" />
+    <ClInclude Include="vendor\GLFW\src\cocoa_joystick.h" />
+    <ClInclude Include="vendor\GLFW\src\cocoa_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\cocoa_time.h" />
+    <ClInclude Include="vendor\GLFW\src\internal.h" />
+    <ClInclude Include="vendor\GLFW\src\linux_joystick.h" />
+    <ClInclude Include="vendor\GLFW\src\mappings.h" />
+    <ClInclude Include="vendor\GLFW\src\null_joystick.h" />
+    <ClInclude Include="vendor\GLFW\src\null_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\platform.h" />
+    <ClInclude Include="vendor\GLFW\src\posix_poll.h" />
+    <ClInclude Include="vendor\GLFW\src\posix_thread.h" />
+    <ClInclude Include="vendor\GLFW\src\posix_time.h" />
+    <ClInclude Include="vendor\GLFW\src\win32_joystick.h" />
+    <ClInclude Include="vendor\GLFW\src\win32_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\win32_thread.h" />
+    <ClInclude Include="vendor\GLFW\src\win32_time.h" />
+    <ClInclude Include="vendor\GLFW\src\wl_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\x11_platform.h" />
+    <ClInclude Include="vendor\GLFW\src\xkb_unicode.h" />
     <ClInclude Include="vendor\pinelog\Logger.h" />
   </ItemGroup>
   <ItemGroup>
@@ -153,10 +200,17 @@
     <ClCompile Include="src\Boreal\Layer.cpp" />
     <ClCompile Include="src\Boreal\LayerStack.cpp" />
     <ClCompile Include="src\Boreal\Log.cpp" />
+    <ClCompile Include="src\Boreal\Utility\Time.cpp" />
     <ClCompile Include="src\bopch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
     <ClCompile Include="vendor\pinelog\Logger.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
