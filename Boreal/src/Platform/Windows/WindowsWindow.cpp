@@ -9,9 +9,9 @@ namespace Boreal {
 
 	static bool s_GLFWInitialized = false;
 
-	std::unique_ptr<Window> Window::Create(const WindowProps& props)
+	Ref<Window> Window::Create(const WindowProps& props)
 	{
-		return std::make_unique<WindowsWindow>(props);
+		return CreateRef<WindowsWindow>(props);
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
@@ -39,6 +39,14 @@ namespace Boreal {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		// Initialize GLAD
+		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+		{
+			std::cerr << "Failed to initialize GLAD!" << std::endl;
+			return;
+		}
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

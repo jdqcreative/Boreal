@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Base.h"
 #include "Events/Event.h"
 #include "Boreal/Events/ApplicationEvent.h"
 #include "LayerStack.h"
@@ -9,6 +10,8 @@ namespace Boreal {
 
 	class Application {
 	public:
+		static Application& Get() { return *s_Instance; }
+
 		Application();
 		virtual ~Application();
 
@@ -23,11 +26,14 @@ namespace Boreal {
 
 		void Shutdown();
 
+		Window& GetWindow() { return *m_Window; }
+
 		// Event handlers
 		bool OnWindowClose(WindowCloseEvent& e);
 
 	private:
-		std::unique_ptr<Window> m_Window;
+		static Application* s_Instance;
+		Ref<Window> m_Window;
 		LayerStack m_LayerStack;
 		bool m_Running = true;
 	};

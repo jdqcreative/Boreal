@@ -3,6 +3,7 @@
 #include "bopch.h"
 
 #include "Events/Event.h"
+#include "Boreal/Base.h"
 
 namespace Boreal {
 
@@ -35,7 +36,7 @@ namespace Boreal {
 		virtual bool IsVSync() const = 0;
 
 		virtual void* GetNativeWindow() const = 0;
-		static std::unique_ptr<Window> Create(const WindowProps& props = WindowProps());
+		static Ref<Window> Create(const WindowProps& props = WindowProps());
 	};
 
 }

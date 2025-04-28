@@ -10,8 +10,20 @@
     <Filter Include="src\Boreal\Events">
       <UniqueIdentifier>{F5FF0C2A-6116-0BC0-AA8D-96E116E3DB47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Boreal\Renderer">
+      <UniqueIdentifier>{F7DF47D8-6341-25E6-ECAE-6B98580F5CA5}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Boreal\Utility">
       <UniqueIdentifier>{7494ED36-6078-AE8C-C9D8-A8DFB5DB980E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform">
+      <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\Windows">
+      <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -36,6 +48,21 @@
     </Filter>
     <Filter Include="vendor\GLFW\src">
       <UniqueIdentifier>{E94D2683-55D9-9347-5EEA-163CCAF4EF47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\alder">
+      <UniqueIdentifier>{2ADC3EF0-163F-CE94-BFC4-064BAB069A17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\glad">
+      <UniqueIdentifier>{9A8E79C1-0644-F2B6-8F38-EC8DFBECE8BA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\glad\include">
+      <UniqueIdentifier>{0DB0903E-7911-6E4C-027F-B4FE6EDFA40B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\glad\include\KHR">
+      <UniqueIdentifier>{01FD6E78-6D34-B70F-763E-1B33E2F4DD08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\glad\include\glad">
+      <UniqueIdentifier>{34935E86-20B8-AD06-4903-93963587AC24}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor\pinelog">
       <UniqueIdentifier>{508EC577-3C5C-B97D-25F0-29A4115D95E2}</UniqueIdentifier>
@@ -69,6 +96,9 @@
     <ClInclude Include="src\Boreal\Input.h">
       <Filter>src\Boreal</Filter>
     </ClInclude>
+    <ClInclude Include="src\Boreal\KeyCodes.h">
+      <Filter>src\Boreal</Filter>
+    </ClInclude>
     <ClInclude Include="src\Boreal\Layer.h">
       <Filter>src\Boreal</Filter>
     </ClInclude>
@@ -78,6 +108,24 @@
     <ClInclude Include="src\Boreal\Log.h">
       <Filter>src\Boreal</Filter>
     </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\Buffer.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\BufferLayout.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\RenderCommand.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\RendererAPI.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\Shader.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\VertexArray.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Boreal\Timestep.h">
       <Filter>src\Boreal</Filter>
     </ClInclude>
@@ -86,6 +134,18 @@
     </ClInclude>
     <ClInclude Include="src\Boreal\Window.h">
       <Filter>src\Boreal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>src\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>src\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\bopch.h">
       <Filter>src</Filter>
@@ -189,10 +249,33 @@
     <ClInclude Include="vendor\GLFW\src\xkb_unicode.h">
       <Filter>vendor\GLFW\src</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\alder\Vec2.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\alder\Vec3.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\alder\Vec4.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\alder\alder.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\alder\mat4.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\glad\include\KHR\khrplatform.h">
+      <Filter>vendor\glad\include\KHR</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\glad\include\glad\glad.h">
+      <Filter>vendor\glad\include\glad</Filter>
+    </ClInclude>
     <ClInclude Include="vendor\pinelog\Logger.h">
       <Filter>vendor\pinelog</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\WindowsWindow.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLIndexBuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Boreal\Application.cpp">
@@ -207,8 +290,26 @@
     <ClCompile Include="src\Boreal\Log.cpp">
       <Filter>src\Boreal</Filter>
     </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\RenderCommand.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\RendererAPI.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Boreal\Utility\Time.cpp">
       <Filter>src\Boreal\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>src\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\bopch.cpp">
       <Filter>src</Filter>
@@ -216,6 +317,12 @@
     <ClCompile Include="vendor\pinelog\Logger.cpp">
       <Filter>vendor\pinelog</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\WindowsWindow.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLIndexBuffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Boreal\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Boreal\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\Boreal\Renderer\BufferLayout.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
+    <ClCompile Include="src\Boreal\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>

@@ -12,15 +12,17 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder
 IncludeDir = {}
 IncludeDir["GLFW"] = "Boreal/vendor/GLFW/include"
+IncludeDir["glad"] = "Boreal/vendor/glad/include"
 
 include "Boreal/vendor/GLFW"
+include "Boreal/vendor/glad"
 
 project "Boreal"
 	location "Boreal"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++20"
-	staticruntime "on"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -40,18 +42,20 @@ project "Boreal"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/pinelog",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"glad",
 		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++20"
-		staticruntime "on"
+		staticruntime "off"
 		systemversion "latest"
 
 		defines 
@@ -76,7 +80,7 @@ project "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++20"
-	staticruntime "on"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -100,7 +104,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++20"
-		staticruntime "on"
+		staticruntime "off"
 		systemversion "latest"
 
 		defines 

@@ -4,13 +4,20 @@
 #include "Events/ApplicationEvent.h"
 #include "Utility/Time.h"
 #include "Log.h"
+#include "Platform/Windows/WindowsInput.h"
+
+#include "KeyCodes.h"
 
 namespace Boreal {
 
+	Application* Application::s_Instance = nullptr;
+	Input* Input::s_Instance = new WindowsInput();
+
 	Application::Application()
 	{
-		m_Window = Window::Create();
+		s_Instance = this;
 
+		m_Window = Ref<Window>(Window::Create());
 		m_Window->SetEventCallback(BOREAL_BIND_EVENT_FN(OnEvent));
 	}
 
@@ -33,6 +40,10 @@ namespace Boreal {
 			float currentTime = Time::GetTime();
 			Timestep ts = currentTime - lastFrameTime;
 			lastFrameTime = currentTime;
+
+			// Test
+			if (Input::IsKeyPressed(87))
+				BO_ERROR("W Key is being pressed!");
 
 			// Update layers
 			for (Layer* layer : m_LayerStack)
