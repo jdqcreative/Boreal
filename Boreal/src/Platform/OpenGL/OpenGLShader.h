@@ -14,6 +14,10 @@ namespace Boreal {
 		virtual void Bind() const override;
 		virtual void Unbind() const override;
 
+		virtual void Setmat4(const std::string& name, const alder::mat4& value) override;
+		virtual void SetFloat4(const std::string& name, const alder::vec4& value) override;
+		virtual void SetInt(const std::string& name, int value) override;
+
 	private:
 		uint32_t m_RendererID;
 

@@ -28,6 +28,9 @@
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\ColdSnap">
+      <UniqueIdentifier>{7635F8B1-E2C0-6576-EBD1-E86A57DCC176}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vendor\GLFW">
       <UniqueIdentifier>{D27667C1-3E2C-E0B6-C720-DA8D33D5D6BA}</UniqueIdentifier>
     </Filter>
@@ -66,6 +69,9 @@
     </Filter>
     <Filter Include="vendor\pinelog">
       <UniqueIdentifier>{508EC577-3C5C-B97D-25F0-29A4115D95E2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -114,13 +120,31 @@
     <ClInclude Include="src\Boreal\Renderer\BufferLayout.h">
       <Filter>src\Boreal\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\Camera.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\OrthographicCamera.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\OrthographicCameraController.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Boreal\Renderer\RenderCommand.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\Renderer.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\Renderer2D.h">
       <Filter>src\Boreal\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Boreal\Renderer\RendererAPI.h">
       <Filter>src\Boreal\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Boreal\Renderer\Shader.h">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Boreal\Renderer\Texture.h">
       <Filter>src\Boreal\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Boreal\Renderer\VertexArray.h">
@@ -135,7 +159,19 @@
     <ClInclude Include="src\Boreal\Window.h">
       <Filter>src\Boreal</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLIndexBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture2D.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexBuffer.h">
@@ -149,6 +185,9 @@
     </ClInclude>
     <ClInclude Include="src\bopch.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ColdSnap\UI.h">
+      <Filter>vendor\ColdSnap</Filter>
     </ClInclude>
     <ClInclude Include="vendor\GLFW\deps\getopt.h">
       <Filter>vendor\GLFW\deps</Filter>
@@ -249,19 +288,28 @@
     <ClInclude Include="vendor\GLFW\src\xkb_unicode.h">
       <Filter>vendor\GLFW\src</Filter>
     </ClInclude>
-    <ClInclude Include="vendor\alder\Vec2.h">
-      <Filter>vendor\alder</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\alder\Vec3.h">
-      <Filter>vendor\alder</Filter>
-    </ClInclude>
-    <ClInclude Include="vendor\alder\Vec4.h">
-      <Filter>vendor\alder</Filter>
-    </ClInclude>
     <ClInclude Include="vendor\alder\alder.h">
       <Filter>vendor\alder</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\alder\forward.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
     <ClInclude Include="vendor\alder\mat4.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\alder\math.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\alder\vec2.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\alder\vec3.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\alder\vec3_Extra.h">
+      <Filter>vendor\alder</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\alder\vec4.h">
       <Filter>vendor\alder</Filter>
     </ClInclude>
     <ClInclude Include="vendor\glad\include\KHR\khrplatform.h">
@@ -273,9 +321,9 @@
     <ClInclude Include="vendor\pinelog\Logger.h">
       <Filter>vendor\pinelog</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\OpenGLIndexBuffer.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Boreal\Application.cpp">
@@ -290,16 +338,52 @@
     <ClCompile Include="src\Boreal\Log.cpp">
       <Filter>src\Boreal</Filter>
     </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\Buffer.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\BufferLayout.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\OrthographicCamera.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\OrthographicCameraController.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Boreal\Renderer\RenderCommand.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\Renderer.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\Renderer2D.cpp">
       <Filter>src\Boreal\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Boreal\Renderer\RendererAPI.cpp">
       <Filter>src\Boreal\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\Shader.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Boreal\Renderer\VertexArray.cpp">
+      <Filter>src\Boreal\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\Boreal\Utility\Time.cpp">
       <Filter>src\Boreal\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLIndexBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture2D.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexBuffer.cpp">
@@ -314,15 +398,14 @@
     <ClCompile Include="src\bopch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="vendor\ColdSnap\UI.cpp">
+      <Filter>vendor\ColdSnap</Filter>
+    </ClCompile>
     <ClCompile Include="vendor\pinelog\Logger.cpp">
       <Filter>vendor\pinelog</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\OpenGLIndexBuffer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
-    <ClCompile Include="src\Boreal\Renderer\Buffer.cpp" />
-    <ClCompile Include="src\Boreal\Renderer\VertexArray.cpp" />
-    <ClCompile Include="src\Boreal\Renderer\BufferLayout.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp" />
-    <ClCompile Include="src\Boreal\Renderer\Shader.cpp" />
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

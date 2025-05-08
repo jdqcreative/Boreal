@@ -25,7 +25,7 @@ namespace Boreal {
 		s_RendererAPI->SetViewport(x, y, width, height);
 	}
 
-	void RenderCommand::SetClearColor(const alder::Vec4& color)
+	void RenderCommand::SetClearColor(const alder::vec4& color)
 	{
 		s_RendererAPI->SetClearColor(color);
 	}

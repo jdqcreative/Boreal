@@ -13,6 +13,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Boreal/vendor/GLFW/include"
 IncludeDir["glad"] = "Boreal/vendor/glad/include"
+IncludeDir["stb_image"] = "Boreal/vendor/stb_image"
 
 include "Boreal/vendor/GLFW"
 include "Boreal/vendor/glad"
@@ -34,6 +35,8 @@ project "Boreal"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/**.h",
 		"%{prj.name}/vendor/**.cpp"
 	}
@@ -43,7 +46,8 @@ project "Boreal"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/pinelog",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.glad}"
+		"%{IncludeDir.glad}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links

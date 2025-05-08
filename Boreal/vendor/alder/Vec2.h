@@ -5,50 +5,50 @@
 
 namespace alder {
 
-	struct Vec2
+	struct vec2
 	{
 		float x, y;
 
 		// Constructors
-		Vec2()
+		vec2()
 			: x(0), y(0) {}
-		Vec2(float x, float y)
+		vec2(float x, float y)
 			: x(x), y(y) {}
 
 		// Operator math overloads
-		Vec2 operator+(const Vec2& other) const 
+		vec2 operator+(const vec2& other) const 
 		{ 
 			return { x + other.x, y + other.y }; 
 		}
 
-		Vec2 operator-(const Vec2& other) const
+		vec2 operator-(const vec2& other) const
 		{
 			return { x - other.x, y - other.y };
 		}
 
-		Vec2 operator*(float scalar) const
+		vec2 operator*(float scalar) const
 		{
 			return { x * scalar, y * scalar };
 		}
 
-		Vec2 operator/(float scalar) const
+		vec2 operator/(float scalar) const
 		{
 			return { x / scalar, y / scalar };
 		}
 
 		// Operator comparison overloadds
-		bool operator==(const Vec2& other) const
+		bool operator==(const vec2& other) const
 		{
 			return x == other.x && y == other.y;
 		}
 
-		bool operator!=(const Vec2& other) const
+		bool operator!=(const vec2& other) const
 		{
 			return !(*this == other);
 		}
 
 		// Algorithms
-		float dot(const Vec2& other) const 
+		float dot(const vec2& other) const 
 		{
 			return x * other.x + y * other.y; 
 		}
@@ -58,32 +58,32 @@ namespace alder {
 			return std::sqrt(dot(*this)); 
 		}
 
-		Vec2 normalized() const
+		vec2 normalized() const
 		{
 			float len = length();
-			return len > 0.0f ? (*this) / len : Vec2(0, 0);
+			return len > 0.0f ? (*this) / len : vec2(0, 0);
 		}
 
 		// Utility functions
-		inline Vec2 Lerp(const Vec2& a, const Vec2& b, float t)
+		inline vec2 lerp(const vec2& a, const vec2& b, float t)
 		{
 			return a + (b - a) * t;
 		}
 
-		inline Vec2 Clamp(const Vec2& v, const Vec2& minV, const Vec2& maxV)
+		inline vec2 clamp(const vec2& v, const vec2& minV, const vec2& maxV)
 		{
-			return Vec2(
+			return vec2(
 				std::max(minV.x, std::min(maxV.x, v.x)),
 				std::max(minV.y, std::min(maxV.y, v.y))
 			);
 		}
 
-		inline bool NearlyEqual(const Vec2& a, const Vec2& b, float epsilon = 1e-5f)
+		inline bool nearlyEqual(const vec2& a, const vec2& b, float epsilon = 1e-5f)
 		{
 			return std::fabs(a.x - b.x) < epsilon && std::fabs(a.y - b.y) < epsilon;
 		}
 
-		float distance(const Vec2& other) const
+		float distance(const vec2& other) const
 		{
 			return (*this - other).length();
 		}

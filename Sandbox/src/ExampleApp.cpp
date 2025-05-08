@@ -7,18 +7,21 @@ public:
 	ExampleLayer()
 		: Layer("Example") 
 	{
-		float vertices[6] = {
-			-0.5f, -0.5f,
-			0.5f, -0.5f,
-			0.0f, 0.5f
+		// Position (x, y, z), Color (r, g, b, a)
+		float vertices[] = {
+			-0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f, 1.0f,
+			 0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f, 1.0f,
+			 0.5f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f,  1.0f, 1.0f, 0.0f, 1.0f
 		};
 
-		uint32_t indices[3] = {
-			0, 1, 2
+		uint32_t indices[] = {
+			0, 1, 2,
+			2, 3, 0
 		};
 
 		//Set viewport
-		Boreal::RenderCommand::SetViewport(0, 0, 1280, 720);
+		Boreal::RenderCommand::SetViewport(0, 0, 1200, 720);
 
 		// Create vertex array and vertex buffer
 		m_VertexArray = Boreal::VertexArray::Create();
@@ -26,7 +29,8 @@ public:
 
 		// Set layout
 		Boreal::BufferLayout layout = {
-			{ Boreal::ShaderDataType::Float2, "a_Position"}
+			{ Boreal::ShaderDataType::Float3, "a_Position"},
+			{ Boreal::ShaderDataType::Float4, "a_Color"}
 		};
 		m_VertexBuffer->SetLayout(layout);
 
@@ -42,39 +46,49 @@ public:
 		// Create shader
 		const std::string vertexSrc = R"(
 #version 330 core
-layout(location = 0) in vec2 a_Position;
+layout(location = 0) in vec3 a_Position;
+layout(location = 1) in vec4 a_Color;
+
+uniform mat4 u_ViewProjection;
+uniform mat4 u_Transform;
+
+out vec4 v_Color;
 
 void main()
 {
-	gl_Position = vec4(a_Position, 0.0, 1.0);
+	v_Color = a_Color;
+	gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
 }
 )";
 
 		const std::string fragmentSrc = R"(
 #version 330 core
+in vec4 v_Color;
 out vec4 color;
 
 void main()
 {
-	color = vec4(0.8, 0.3, 0.2, 1.0);
+	color = v_Color;
 }
 )";
 
 		m_Shader = Boreal::Shader::Create(vertexSrc, fragmentSrc);
+		m_CameraController = Boreal::OrthographicCameraController(Boreal::Application::Get().GetWindow().GetWidth() / Boreal::Application::Get().GetWindow().GetHeight());
 	}
 
 	void OnUpdate(Boreal::Timestep ts) override
 	{
 		// Clear screen
-		Boreal::RenderCommand::SetClearColor(alder::Vec4(0.1f, 0.1f, 0.1f, 1.0f));
+		Boreal::RenderCommand::SetClearColor(alder::vec4(0.1f, 0.1f, 0.1f, 1.0f));
 		Boreal::RenderCommand::Clear();
 
-		// Bind shader and VAO
-		m_Shader->Bind();
-		m_VertexArray->Bind();
-
 		// Submit draw
-		Boreal::RenderCommand::DrawIndexed(m_VertexArray);
+		m_CameraController.OnUpdate(ts);
+
+		Boreal::Renderer2D::Init();
+		Boreal::Renderer2D::BeginScene(m_CameraController.GetCamera());
+		Boreal::Renderer2D::DrawQuad({ 1.0f, 1.0f }, { 0.5f, 0.5f }, {1.0f, 0.0f, 0.0f, 1.0f});
+		Boreal::Renderer2D::EndScene();
 	}
 
 	void OnEvent(Boreal::Event& event) override
@@ -87,6 +101,7 @@ private:
 	std::shared_ptr<Boreal::VertexBuffer> m_VertexBuffer;
 	std::shared_ptr<Boreal::IndexBuffer> m_IndexBuffer;
 	std::shared_ptr<Boreal::Shader> m_Shader;
+	Boreal::OrthographicCameraController m_CameraController;
 
 };
 

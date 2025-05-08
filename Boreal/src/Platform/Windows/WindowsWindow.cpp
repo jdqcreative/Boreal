@@ -1,11 +1,18 @@
 #include "bopch.h"
 #include "WindowsWindow.h"
 
+#include "Boreal/Renderer/RenderCommand.h"
+
 #include "Boreal/Events/ApplicationEvent.h"
 #include "Boreal/Events/KeyboardEvent.h"
 #include "Boreal/Events/MouseEvent.h"
 
 namespace Boreal {
+
+	static void GLFWFramebufferSizeCallback(GLFWwindow* window, int width, int height)
+	{
+		RenderCommand::SetViewport(0, 0, width, height);
+	}
 
 	static bool s_GLFWInitialized = false;
 
@@ -39,6 +46,8 @@ namespace Boreal {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		glfwSetFramebufferSizeCallback(m_Window, GLFWFramebufferSizeCallback);
 
 		// Initialize GLAD
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))

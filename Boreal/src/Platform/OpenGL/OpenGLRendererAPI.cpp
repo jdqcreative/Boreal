@@ -17,7 +17,7 @@ namespace Boreal {
 		glViewport(x, y, width, height);
 	}
 
-	void OpenGLRendererAPI::SetClearColor(const alder::Vec4& color)
+	void OpenGLRendererAPI::SetClearColor(const alder::vec4& color)
 	{
 		glClearColor(color.x, color.y, color.z, color.w);
 	}

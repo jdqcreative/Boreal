@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../vendor/alder/alder.h"
+//#include "../vendor/alder/alder.h"
 
 #include "RendererAPI.h"
 
@@ -11,7 +11,7 @@ namespace Boreal {
 	public:
 		static void Init();
 		static void SetViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height);
-		static void SetClearColor(const alder::Vec4& color);
+		static void SetClearColor(const alder::vec4& color);
 		static void Clear();
 		static void DrawIndexed(const Ref<VertexArray>& vertexArray, uint32_t indexCount = 0);
 

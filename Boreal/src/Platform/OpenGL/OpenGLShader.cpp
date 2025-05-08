@@ -2,7 +2,6 @@
 #include "OpenGLShader.h"
 
 #include <glad/glad.h>
-#include <../alder/alder.h>
 
 namespace Boreal {
 
@@ -26,6 +25,26 @@ namespace Boreal {
 		glUseProgram(0);
 	}
 
+	// Set uniform functions
+	void OpenGLShader::Setmat4(const std::string& name, const alder::mat4& value)
+	{
+		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniformMatrix4fv(location, 1, GL_FALSE, alder::value_ptr(value));
+	}
+
+	void OpenGLShader::SetFloat4(const std::string& name, const alder::vec4& value)
+	{
+		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniform4f(location, value.x, value.y, value.z, value.w);
+	}
+
+	void OpenGLShader::SetInt(const std::string& name, int value)
+	{
+		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniform1i(location, value);
+	}
+
+	// Compile shader
 	void OpenGLShader::Compile(const std::string& vertexSrc, const std::string& fragmentSrc)
 	{
 		// Create an empty vertex shader handle

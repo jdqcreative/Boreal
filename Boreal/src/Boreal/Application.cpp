@@ -41,10 +41,6 @@ namespace Boreal {
 			Timestep ts = currentTime - lastFrameTime;
 			lastFrameTime = currentTime;
 
-			// Test
-			if (Input::IsKeyPressed(87))
-				BO_ERROR("W Key is being pressed!");
-
 			// Update layers
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate(ts);

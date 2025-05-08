@@ -122,7 +122,7 @@ namespace Pinelog {
 		std::tm timeStruct;
 		localtime_s(&timeStruct, &now);
 		std::ostringstream oss;
-		oss << std::put_time(&timeStruct, "%Y-%m-%d %H:%M:%S");
+		oss << std::put_time(&timeStruct, "%Y-%elements-%d %H:%M:%S");
 		return oss.str();
 	}
 }

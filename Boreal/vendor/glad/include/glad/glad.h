@@ -2818,26 +2818,26 @@ typedef void (APIENTRYP PFNGLFRUSTUMPROC)(GLdouble left, GLdouble right, GLdoubl
 GLAPI PFNGLFRUSTUMPROC glad_glFrustum;
 #define glFrustum glad_glFrustum
 typedef void (APIENTRYP PFNGLLOADIDENTITYPROC)(void);
-GLAPI PFNGLLOADIDENTITYPROC glad_glLoadIdentity;
-#define glLoadIdentity glad_glLoadIdentity
-typedef void (APIENTRYP PFNGLLOADMATRIXFPROC)(const GLfloat *m);
+GLAPI PFNGLLOADIDENTITYPROC glad_glLoadidentity;
+#define glLoadidentity glad_glLoadidentity
+typedef void (APIENTRYP PFNGLLOADMATRIXFPROC)(const GLfloat *elements);
 GLAPI PFNGLLOADMATRIXFPROC glad_glLoadMatrixf;
 #define glLoadMatrixf glad_glLoadMatrixf
-typedef void (APIENTRYP PFNGLLOADMATRIXDPROC)(const GLdouble *m);
+typedef void (APIENTRYP PFNGLLOADMATRIXDPROC)(const GLdouble *elements);
 GLAPI PFNGLLOADMATRIXDPROC glad_glLoadMatrixd;
 #define glLoadMatrixd glad_glLoadMatrixd
 typedef void (APIENTRYP PFNGLMATRIXMODEPROC)(GLenum mode);
 GLAPI PFNGLMATRIXMODEPROC glad_glMatrixMode;
 #define glMatrixMode glad_glMatrixMode
-typedef void (APIENTRYP PFNGLMULTMATRIXFPROC)(const GLfloat *m);
+typedef void (APIENTRYP PFNGLMULTMATRIXFPROC)(const GLfloat *elements);
 GLAPI PFNGLMULTMATRIXFPROC glad_glMultMatrixf;
 #define glMultMatrixf glad_glMultMatrixf
-typedef void (APIENTRYP PFNGLMULTMATRIXDPROC)(const GLdouble *m);
+typedef void (APIENTRYP PFNGLMULTMATRIXDPROC)(const GLdouble *elements);
 GLAPI PFNGLMULTMATRIXDPROC glad_glMultMatrixd;
 #define glMultMatrixd glad_glMultMatrixd
 typedef void (APIENTRYP PFNGLORTHOPROC)(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);
-GLAPI PFNGLORTHOPROC glad_glOrtho;
-#define glOrtho glad_glOrtho
+GLAPI PFNGLORTHOPROC glad_glortho;
+#define glortho glad_glortho
 typedef void (APIENTRYP PFNGLPOPMATRIXPROC)(void);
 GLAPI PFNGLPOPMATRIXPROC glad_glPopMatrix;
 #define glPopMatrix glad_glPopMatrix
@@ -3102,16 +3102,16 @@ GLAPI PFNGLMULTITEXCOORD4SPROC glad_glMultiTexCoord4s;
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4SVPROC)(GLenum target, const GLshort *v);
 GLAPI PFNGLMULTITEXCOORD4SVPROC glad_glMultiTexCoord4sv;
 #define glMultiTexCoord4sv glad_glMultiTexCoord4sv
-typedef void (APIENTRYP PFNGLLOADTRANSPOSEMATRIXFPROC)(const GLfloat *m);
+typedef void (APIENTRYP PFNGLLOADTRANSPOSEMATRIXFPROC)(const GLfloat *elements);
 GLAPI PFNGLLOADTRANSPOSEMATRIXFPROC glad_glLoadTransposeMatrixf;
 #define glLoadTransposeMatrixf glad_glLoadTransposeMatrixf
-typedef void (APIENTRYP PFNGLLOADTRANSPOSEMATRIXDPROC)(const GLdouble *m);
+typedef void (APIENTRYP PFNGLLOADTRANSPOSEMATRIXDPROC)(const GLdouble *elements);
 GLAPI PFNGLLOADTRANSPOSEMATRIXDPROC glad_glLoadTransposeMatrixd;
 #define glLoadTransposeMatrixd glad_glLoadTransposeMatrixd
-typedef void (APIENTRYP PFNGLMULTTRANSPOSEMATRIXFPROC)(const GLfloat *m);
+typedef void (APIENTRYP PFNGLMULTTRANSPOSEMATRIXFPROC)(const GLfloat *elements);
 GLAPI PFNGLMULTTRANSPOSEMATRIXFPROC glad_glMultTransposeMatrixf;
 #define glMultTransposeMatrixf glad_glMultTransposeMatrixf
-typedef void (APIENTRYP PFNGLMULTTRANSPOSEMATRIXDPROC)(const GLdouble *m);
+typedef void (APIENTRYP PFNGLMULTTRANSPOSEMATRIXDPROC)(const GLdouble *elements);
 GLAPI PFNGLMULTTRANSPOSEMATRIXDPROC glad_glMultTransposeMatrixd;
 #define glMultTransposeMatrixd glad_glMultTransposeMatrixd
 #endif
@@ -3666,8 +3666,8 @@ typedef void (APIENTRYP PFNGLGETTRANSFORMFEEDBACKVARYINGPROC)(GLuint program, GL
 GLAPI PFNGLGETTRANSFORMFEEDBACKVARYINGPROC glad_glGetTransformFeedbackVarying;
 #define glGetTransformFeedbackVarying glad_glGetTransformFeedbackVarying
 typedef void (APIENTRYP PFNGLCLAMPCOLORPROC)(GLenum target, GLenum clamp);
-GLAPI PFNGLCLAMPCOLORPROC glad_glClampColor;
-#define glClampColor glad_glClampColor
+GLAPI PFNGLCLAMPCOLORPROC glad_glclampColor;
+#define glclampColor glad_glclampColor
 typedef void (APIENTRYP PFNGLBEGINCONDITIONALRENDERPROC)(GLuint id, GLenum mode);
 GLAPI PFNGLBEGINCONDITIONALRENDERPROC glad_glBeginConditionalRender;
 #define glBeginConditionalRender glad_glBeginConditionalRender
@@ -5158,8 +5158,8 @@ typedef void (APIENTRYP PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC)(GLenum mode, GL
 GLAPI PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC glad_glMultiDrawElementsIndirectCount;
 #define glMultiDrawElementsIndirectCount glad_glMultiDrawElementsIndirectCount
 typedef void (APIENTRYP PFNGLPOLYGONOFFSETCLAMPPROC)(GLfloat factor, GLfloat units, GLfloat clamp);
-GLAPI PFNGLPOLYGONOFFSETCLAMPPROC glad_glPolygonOffsetClamp;
-#define glPolygonOffsetClamp glad_glPolygonOffsetClamp
+GLAPI PFNGLPOLYGONOFFSETCLAMPPROC glad_glPolygonOffsetclamp;
+#define glPolygonOffsetclamp glad_glPolygonOffsetclamp
 #endif
 
 #ifdef __cplusplus
